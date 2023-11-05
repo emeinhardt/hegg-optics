@@ -1,0 +1,36 @@
+cabal-version:      3.0
+name:               hegg-optics
+version:            0.1.0.0
+synopsis:
+  Analogues of the lenses provided by hegg for users of the optics library.
+
+description:
+  Provides an @Optics@ module paralleling
+  [Data.Equality.Graph.Lens](https://hackage.haskell.org/package/hegg-0.4.0.0/docs/Data-Equality-Graph-Lens.html)
+  in [hegg](https://hackage.haskell.org/package/hegg) for users of the
+  [optics](https://hackage.haskell.org/package/optics) library.
+
+license:            MIT
+license-file:       LICENSE
+author:             Eric Meinhardt
+maintainer:         ericmeinhardt@gmail.com
+copyright:          2023
+category:           Control
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+  ghc-options:
+    -Wall -Wdefault -Wno-orphans -Wredundant-constraints -Wincomplete-uni-patterns -Wincomplete-record-updates -Wcompat
+
+library
+  import:             warnings
+  default-language:   GHC2021
+  default-extensions: UnicodeSyntax
+  hs-source-dirs:     src
+  exposed-modules:    Data.Equality.Graph.Optics
+  build-depends:
+      base ^>=4.17.1.0
+    , hegg                        ==0.4.*
+    , optics-core                 ==0.4.*
+    , containers                  ==0.6.*
