@@ -1,6 +1,6 @@
-cabal-version:      3.0
-name:               hegg-optics
-version:            0.1.0.0
+cabal-version:        3.0
+name:                 hegg-optics
+version:              0.1.0.0
 synopsis:
   Analogues of the lenses provided by hegg for users of the optics library.
 
@@ -10,14 +10,20 @@ description:
   in [hegg](https://hackage.haskell.org/package/hegg) for users of the
   [optics](https://hackage.haskell.org/package/optics) library.
 
-license:            MIT
-license-file:       LICENSE
-author:             Eric Meinhardt
-maintainer:         ericmeinhardt@gmail.com
-copyright:          2023
-category:           Control
-build-type:         Simple
-extra-doc-files:    CHANGELOG.md
+license:              MIT
+license-file:         LICENSE
+author:               Eric Meinhardt
+maintainer:           ericmeinhardt@gmail.com
+copyright:            2023
+homepage:             https://github.com/emeinhardt/hegg-optics
+bug-reports:          https://github.com/emeinhardt/hegg-optics/issues
+category:             Control
+build-type:           Simple
+extra-doc-files:      CHANGELOG.md
+
+source-repository head
+  type:     git
+  location: https://github.com/emeinhardt/hegg-optics/hegg-optics.git
 
 common warnings
   ghc-options:
@@ -28,9 +34,10 @@ library
   default-language:   GHC2021
   default-extensions: UnicodeSyntax
   hs-source-dirs:     src
-  exposed-modules:    Data.Equality.Graph.Optics
+  exposed-modules:
+    Data.Equality.Graph.Optics
   build-depends:
-      base ^>=4.17.1.0
-    , hegg                        ==0.4.*
-    , optics-core                 ==0.4.*
-    , containers                  ==0.6.*
+      base           >= 4.16 && < 5.0
+    , hegg           == 0.4.*
+    , optics-core    >= 0.4  && < 0.5
+    , containers     >= 0.6  && < 0.7
